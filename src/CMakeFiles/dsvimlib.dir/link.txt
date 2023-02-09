@@ -1,0 +1,1 @@
+/usr/bin/c++ -fPIC   -shared -Wl,-soname,libdsvimlib.so -o libdsvimlib.so CMakeFiles/dsvimlib.dir/imageTalk.cpp.o CMakeFiles/dsvimlib.dir/IniFile.cpp.o CMakeFiles/dsvimlib.dir/launch_timer.cpp.o CMakeFiles/dsvimlib.dir/mkdir_p.cpp.o CMakeFiles/dsvimlib.dir/nio_thread.cpp.o CMakeFiles/dsvimlib.dir/time_util.cpp.o CMakeFiles/dsvimlib.dir/msg_util.cpp.o 
