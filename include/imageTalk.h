@@ -59,7 +59,7 @@ typedef struct
 #define MESOBOT_TRAJECTORY_THREAD     12
 #define MESOBOT_THALLOC_THREAD        13
 #define DSPLLIGHT_THREAD              14
-#define XBOX_NIO_THREAD               15
+#define STEREO_LOGGING_THREAD         15
 
 #define BUS_THREAD_SUBTHREAD          20
 #define MX_MAIN                       30
@@ -158,6 +158,7 @@ typedef struct
 #define LCOM            57       /* do comms on lights */
 #define WMMODE          58       /* do comms on lights */
 #define WDECIMATION     59       /* write or rewrite decimation factor */
+#define LOG_QUERY       60       /* duh */
 /* added by DY */
 #define CONTROL_TIMER 70
 #define WRITE_VEHICLE_STATE 71
