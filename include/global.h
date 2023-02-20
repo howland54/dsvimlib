@@ -5,6 +5,16 @@
 
 #define MAX_NUMBER_OF_THREADS 256
 #define END_OF_THREAD_TABLE "END OF THREAD TABLE"
+
+#define NUM_DOF  6
+
+#define DOF_X     0
+#define DOF_Y     1
+#define DOF_Z     2
+#define DOF_HDG   3
+#define DOF_PITCH 4
+#define DOF_ROLL  5
+
 typedef struct
 {
   int thread_num;

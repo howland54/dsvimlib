@@ -42,9 +42,6 @@ int sorted_imagetalk_list_initialized = 0;
 
 // this is an un-ordered array of jasontalk commands
 static const imagetalk_message_table_entry_t unsorted_imagetalk_list[] = {
-   {START_REC,"START_REC",UMC_THREAD},
-   {STOP_REC,"STOP_REC",UMC_THREAD},
-   {STILL,"STILL",UMC_THREAD},
    {PNG, "PING", 0,
     "PNG interrogates a thread to see if it is alive.   usage: \"PNG <thread number>\" example: \"PNG 0\"\n\r"},
    {SPI, "SPI", 0},

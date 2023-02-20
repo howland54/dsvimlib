@@ -51,15 +51,21 @@ typedef struct
 #define TIMER_THREAD                  4
 #define CMD_THREAD                    5
 #define LCM_RECEIVE_THREAD            6
-#define UMC_THREAD                    7
-#define UMC_SUBTHREAD                 8
-#define EPI_THREAD                    9
+#define MS_NIO_THREAD                 7
+#define SENSOR_THREAD                 8
+#define MS_THREAD                     9
 #define NIO_INPUT_THREAD              10
-#define MESOBOT_SERVO_THREAD          11
+#define MS_NET_THREAD                 11
 #define MESOBOT_TRAJECTORY_THREAD     12
 #define MESOBOT_THALLOC_THREAD        13
 #define DSPLLIGHT_THREAD              14
 #define STEREO_LOGGING_THREAD         15
+#define CTD_THREAD                    16
+#define FATHOMETER_THREAD             17
+#define ALTIMETER_THREAD              18
+#define GPS_THREAD                    19
+
+
 
 #define BUS_THREAD_SUBTHREAD          20
 #define MX_MAIN                       30
@@ -117,8 +123,8 @@ typedef struct
 #define CAMERA_QUERY    16       /* check some camera parameters */
 #define SQT             17       /* start query timer--start asking the camera for parameters */
 #define IMAGE_QUERY     18       /* see if we need to save an image */
-#define UMCON           19       /* umc connection report */
-#define UMERR           20       /* UMC connection error type report */
+#define MSPI            19       /* microstrain prompt */
+#define MSD             20       /* microstrain data */
 #define STILL           21       /* take a still picture */
 #define START_REC       22       /* start recording */
 #define STOP_REC        23       /* stop recording */
@@ -193,6 +199,34 @@ typedef struct
 #define WRITE_BATTERY_PACK 100 //added 2021/08/30
 #define  VERSION_MISMATCH     -900
 #define  DT_SETTING_NOT_READY -901
+
+typedef enum
+{
+  SRC_NONE,			/* 0 */
+  SRC_NAV,			/* 1 */
+  SRC_VEHICLE_ALTIMETER,	/* 2 */
+  SRC_VEHICLE_CTD,	/* 3 */
+  SRC_VESSEL_FATHOMETER,	/* 4 */
+  SRC_VESSEL_GPS,			/* 5 */
+  SRC_VEHICLE_MICROSTRAIN,			/* 6 */
+}
+data_source_t;
+
+typedef struct
+{
+  double pos[NUM_DOF];		/* x, y, z, heading, roll, pitch */
+  double vel[NUM_DOF];		/* Units: meters, radians, seconds */
+  double acc[NUM_DOF];
+  rov_time_t pos_time[NUM_DOF];	/* time original data was received */
+  rov_time_t vel_time[NUM_DOF];	/* time original data was received */
+  rov_time_t acc_time[NUM_DOF];	/* time original data was received */
+  data_source_t pos_source[NUM_DOF];	/* source of data */
+  data_source_t vel_source[NUM_DOF];	/* source of data */
+  data_source_t acc_source[NUM_DOF];	/* source of data */
+  int NFG;			/* Flag to indicate whether or not nav soln. is good, based on what
+                   nav mode you are in and the number of good ranges returned */
+}
+vehicle_state_t;
 
 /* ====================================================================== 
    functions
