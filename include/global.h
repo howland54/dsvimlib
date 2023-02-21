@@ -15,6 +15,9 @@
 #define DOF_PITCH 4
 #define DOF_ROLL  5
 
+#define TRUE    1
+#define FALSE   0
+
 typedef struct
 {
   int thread_num;

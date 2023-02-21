@@ -40,6 +40,9 @@
 #define KNOTS_TO_MSEC(a)	((a*METERS_NMILE)/SECS_HOUR)
 #define FEET_TO_METERS(a)	(a * METERS_FOOT)
 
+#define  PRESSURE_TO_DEPTH .9930   // decibars to meters, from unesco page
+
+
 #define MPStoKTS     1.943844494
 #define KTStoMPS     1.943844494
 #define MMtoYDS      0.001093613
