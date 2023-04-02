@@ -56,9 +56,7 @@ typedef struct
 #define MS_THREAD                     9
 #define NIO_INPUT_THREAD              10
 #define MS_NET_THREAD                 11
-#define MESOBOT_TRAJECTORY_THREAD     12
-#define MESOBOT_THALLOC_THREAD        13
-#define DSPLLIGHT_THREAD              14
+#define SIMULATION_THREAD             12
 #define STEREO_LOGGING_THREAD         15
 #define CTD_THREAD                    16
 #define FATHOMETER_THREAD             17
@@ -165,6 +163,7 @@ typedef struct
 #define WMMODE          58       /* do comms on lights */
 #define WDECIMATION     59       /* write or rewrite decimation factor */
 #define LOG_QUERY       60       /* duh */
+#define SIMULATION_TICK1    61  /* take a simulated stereo pair */
 /* added by DY */
 #define CONTROL_TIMER 70
 #define WRITE_VEHICLE_STATE 71
