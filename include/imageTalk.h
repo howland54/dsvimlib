@@ -164,6 +164,11 @@ typedef struct
 #define WDECIMATION     59       /* write or rewrite decimation factor */
 #define LOG_QUERY       60       /* duh */
 #define SIMULATION_TICK1    61  /* take a simulated stereo pair */
+#define SIMULATION_TICK2    62  /* simulate some data */
+#define SIMULATION_TICK3    63  /* simulate some data */
+#define SIMULATION_TICK4    64  /* simulate some data */
+#define SIMULATION_TICK5    65  /* simulate some data */
+#define SIMULATION_TICK6    66  /* simulate some data */
 /* added by DY */
 #define CONTROL_TIMER 70
 #define WRITE_VEHICLE_STATE 71
