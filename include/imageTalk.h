@@ -70,7 +70,8 @@ typedef struct
 #define MX_MONITOR_THREAD             31
 #define MX_LCM_RECEIVE_THREAD         32
 #define MX_MAIN_THREAD                33
-
+#define CONSTANCY_THREAD              34
+#define JPEG_THREAD                   35
 
 #define FLY_THREAD_BASE               100
 #define LIGHT_THREAD_BASE             175
@@ -169,6 +170,8 @@ typedef struct
 #define SIMULATION_TICK4    64  /* simulate some data */
 #define SIMULATION_TICK5    65  /* simulate some data */
 #define SIMULATION_TICK6    66  /* simulate some data */
+#define WCON                67 /* send a msg to do a color constancy computation*/
+#define WJPG                68 /* send a msg to save a jpeg */
 /* added by DY */
 #define CONTROL_TIMER 70
 #define WRITE_VEHICLE_STATE 71
